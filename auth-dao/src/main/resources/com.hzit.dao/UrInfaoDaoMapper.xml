@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!--mapper标签用于指定配置文件所属的接口名，通过namespace来指定  -->
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="dao.RoleInfoDao">
+<mapper namespace="dao.UrInfoDao">
     <!--select标签用于指定查询方法，
                                其中id属性代表方法名 ，
              parameterType代表方法参数指定类型，
              resultType代表方法返回集合中元素的类型
     -->
-    <select id="findRole"  parameterType="int" resultType="RoleInfo">
-        select * from roleinfo where rid = #{rid}
+    <select id="findUrinfo"  parameterType="int" resultType="Urinfo">
+        select * from Urinfo where uid = #{uid}
     </select>
-    <insert id="addRole" parameterType="RoleInfo">
-        insert into roleinfo values(#{rid},#{rname})
+    <insert id="addUrinfo" parameterType="Urinfo">
+        insert into Urinfo values(#{uid},#{rid})
     </insert>
-    <update id="updateRole" parameterType="RoleInfo">
-        update roleinfo set rid = #{rid},rname = #{rname} where rid = #{rid}
+    <update id="updateUrinfo" parameterType="Urinfo">
+        update Urinfo set rid = #{rid} where uid = #{uid}
     </update>
-    <delete id="deleteRole" parameterType="int">
-        delete from roleinfo where rid = #{rid}
+    <delete id="deleteUrinfo" parameterType="int">
+        delete from Urinfo where uid = #{uid}
     </delete>
 </mapper>
