@@ -18,6 +18,7 @@
     </environments>
     <mappers>
         <mapper resource="com.hzit.dao/RoleInfoDaoMapper.xml" ></mapper>
+        <mapper resource="com.hzit.dao/UrInfoDaoMapper.xml" ></mapper>
 
     </mappers>
 </configuration>
