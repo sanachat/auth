@@ -11,7 +11,7 @@ package com.hzit.entity;
  * |  @description   角色资源关联啊
  * +---------------------------------Oooo---------------------------------------+
  */
-public class RoleSource {
+public class RolereSource {
     private  int roleid;
     private  int resourceid;
 
