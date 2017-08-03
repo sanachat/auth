@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!--mapper标签用于指定配置文件所属的接口名，通过namespace来指定  -->
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="dao.UrInfoDao">
+<mapper namespace="com.hzit.dao.UrInfoDao">
     <!--select标签用于指定查询方法，
                                其中id属性代表方法名 ，
              parameterType代表方法参数指定类型，
