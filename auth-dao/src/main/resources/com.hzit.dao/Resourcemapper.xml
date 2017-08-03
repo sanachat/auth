@@ -15,7 +15,7 @@
         insert into resourcces values(#{rname},#{resurl},#{resorderno},#{redsdes},#{createTime},#{createMan})
     </insert>
     <update id="updateResources" parameterType="com.hzit.entity.Resources">
-        update resourcces set rname=#{rname},resurl=#{resurl},resorderno=#{resorderno},redsdes=#{redsdes],updatetime=#{updatetime],updateMan=#{updateMan} where cardid=#{cardid}
+        update resourcces set rname=#{rname},resurl=#{resurl},resorderno=#{resorderno},redsdes=#{redsdes},updatetime=#{updatetime},updateMan=#{updateMan} where cardid=#{cardid}
     </update>
     <delete id="deleteResources" parameterType="int">
         delete from resourcces where rid=#{rid}
