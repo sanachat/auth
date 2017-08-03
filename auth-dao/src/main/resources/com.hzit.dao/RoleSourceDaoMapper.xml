@@ -7,13 +7,13 @@
              parameterType代表方法参数指定类型，
              resultType代表方法返回集合中元素的类型
     -->
-    <select id="findroleSource"  parameterType="int" resultType="RoleSource">
+    <select id="findroleSource"  parameterType="int" resultType="com.hzit.entity.RoleSource">
         select * from RoleSource where rid = #{rid}
     </select>
-    <insert id="addroleSource" parameterType="RoleSource">
+    <insert id="addroleSource" parameterType="com.hzit.entity.RoleSource">
         insert into RoleSource values(#{rid},#{resourceid})
     </insert>
-    <update id="updateroleSource" parameterType="RoleSource">
+    <update id="updateroleSource" parameterType="com.hzit.entity.RoleSource">
         update RoleSource set  resourceid = #{resourceid} where rid= #{rid}
     </update>
     <delete id="deleteroleSource" parameterType="int">
