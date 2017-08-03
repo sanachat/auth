@@ -2,9 +2,17 @@ package com.hzit.dao;
 
 import com.hzit.entity.RoleInfo;
 
+import java.util.List;
+
 /**
  * Created by wan on 2017/8/3.
  */
 public interface RoleInfoDao {
-    public RoleInfo find(String rid);//同过角色id返回角色表的所有信息
+    public List<RoleInfo> findRole();
+
+    public int addRole(RoleInfo roleInfo);
+
+    public int updateRole(RoleInfo roleInfo);
+
+    public int deleteRole(String rid);
 }
