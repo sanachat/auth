@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+    <properties resource="db.properties"/>
     <environments default="development">
+        <!-- >配置运行环境，环境编号为development< -->
         <environment id="development">
+            <!-- >指定事务处理交给JDBC< -->
             <transactionManager type="JDBC" />
+            <!-- >配置数据源< -->
             <dataSource type="POOLED">
-                <property name="driver" value="com.mysql.jdbc.Driver" />
-                <property name="url" value="jdbc:mysql://localhost:3306/mybatis" />
-                <property name="username" value="root" />
-                <property name="password" value="root" />
+                <property name="driver" value="${driver}" />
+                <property name="url" value="${url}" />
+                <property name="username" value="${username}" />
+                <property name="password" value="${password}" />
             </dataSource>
         </environment>
     </environments>
