@@ -8,11 +8,11 @@ import java.util.List;
  * Created by wan on 2017/8/3.
  */
 public interface RoleSourceDao {
-    public List<RoleSource> findroleSource();
+    public List<RoleSource> findroleSource(int roleid);
 
     public int addroleSource(RoleSource roleSource);
 
     public int updateroleSource(RoleSource roleSource);
 
-    public int deleteroleSource(String roleid);
+    public int deleteroleSource(int roleid);
 }
