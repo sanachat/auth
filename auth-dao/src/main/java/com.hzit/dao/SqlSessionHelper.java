@@ -23,7 +23,7 @@ public class SqlSessionHelper {
     static{
         Reader r;
         try {
-            r=Resources.getResourceAsReader("mybatis.xml");
+            r=Resources.getResourceAsReader("mybatis-conf.xml");
             System.out.println("读取配置文件成功");
             factory=new SqlSessionFactoryBuilder().build(r);
             System.out.println("Sqlsession工厂创建成功");
