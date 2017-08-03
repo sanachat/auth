@@ -8,7 +8,7 @@ package com.hzit.entity;
  * |　@author 万家明　　　　　                                                                 　|
  * |　@author 江西财经大学                                                  |
  * |　@create 2017年08月03日 - 16:53
- * |  @description   角色资源关联
+ * |  @description   角色资源关联啊
  * +---------------------------------Oooo---------------------------------------+
  */
 public class RoleSource {
