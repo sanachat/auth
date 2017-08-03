@@ -8,7 +8,7 @@ import java.util.List;
  * Created by wan on 2017/8/3.
  */
 public interface UrInfoDao {
-    public List<UrInfo> findUrinfo(int uid);
+    public UrInfo findUrinfo(int uid);
     public int addUrInfo(UrInfo urInfo);
 
     public int updateUrInfo(UrInfo urInfo);

@@ -8,7 +8,7 @@ import java.util.List;
  * Created by wan on 2017/8/3.
  */
 public interface RoleSourceDao {
-    public List<RoleSource> findroleSource(int roleid);
+    public RoleSource findroleSource(int roleid);
 
     public int addroleSource(RoleSource roleSource);
 
