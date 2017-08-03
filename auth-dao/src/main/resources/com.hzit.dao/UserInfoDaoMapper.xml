@@ -7,7 +7,7 @@
              parameterType代表方法参数指定类型，
              resultType代表方法返回集合中元素的类型
     -->
-    <select id="findUser"  parameterType="List" resultType="UserInfo">
+    <select id="findUser"  resultType="List">
         select * from userinfo
     </select>
     <insert id="addUser" parameterType="UserInfo">

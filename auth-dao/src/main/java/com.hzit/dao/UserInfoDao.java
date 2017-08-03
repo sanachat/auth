@@ -9,7 +9,7 @@ import java.util.List;
  */
 public interface UserInfoDao
 {
-    public List<UserInfo> findUser(List list);
+    public List<UserInfo> findUser();
 
     public int addUser(UserInfo userInfo);
 
