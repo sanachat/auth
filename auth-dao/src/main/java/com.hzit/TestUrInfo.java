@@ -48,8 +48,8 @@ public class TestUrInfo {
 		System.out.println(u);
 		session.close();// 更新角色id或用户id*/
 
-		int num = 0;
-		num = dao.deleteUrInfo(2);
+
+		int num = dao.deleteUrInfo(2);
 		session.commit();
 		System.out.println("删除成功，受影响的行数：" + num);
 		session.close();//删除角色
