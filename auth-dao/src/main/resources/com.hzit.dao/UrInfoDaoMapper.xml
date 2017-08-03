@@ -7,16 +7,16 @@
              parameterType代表方法参数指定类型，
              resultType代表方法返回集合中元素的类型
     -->
-    <select id="findUrinfo"  parameterType="int" resultType="com.hzit.entity.Urinfo">
+    <select id="findUrinfo"  parameterType="int" resultType="com.hzit.entity.UrInfo">
         select * from Urinfo where uid = #{uid}
     </select>
-    <insert id="addUrinfo" parameterType="com.hzit.entity.Urinfo">
+    <insert id="addUrInfo" parameterType="com.hzit.entity.UrInfo">
         insert into Urinfo values(#{uid},#{rid})
     </insert>
-    <update id="updateUrinfo" parameterType="com.hzit.entity.Urinfo">
+    <update id="updateUrInfo" parameterType="com.hzit.entity.UrInfo">
         update Urinfo set rid = #{rid} where uid = #{uid}
     </update>
-    <delete id="deleteUrinfo" parameterType="int">
+    <delete id="deleteUrInfo" parameterType="int">
         delete from Urinfo where uid = #{uid}
     </delete>
 </mapper>

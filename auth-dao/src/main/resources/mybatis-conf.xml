@@ -20,10 +20,8 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="com.hzit.dao/Resourcemapper.xml" ></mapper>
-        <mapper resource="com.hzit.dao/UserInfoDaoMapper.xml" ></mapper>
         <mapper resource="com.hzit.dao/RoleInfoDaoMapper.xml" ></mapper>
-        <mapper resource="com.hzit.dao/RoleSourceDaoMapper.xml" ></mapper>
-        <mapper resource="com.hzit.dao/UrInfaoDaoMapper.xml" ></mapper>
+        <mapper resource="com.hzit.dao/UrInfoDaoMapper.xml" ></mapper>
+
     </mappers>
 </configuration>
