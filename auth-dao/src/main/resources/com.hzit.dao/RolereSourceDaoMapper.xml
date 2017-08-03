@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!--mapper标签用于指定配置文件所属的接口名，通过namespace来指定  -->
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.hzit.dao.RoleSourceDao">
+<mapper namespace="com.hzit.dao.RolereSourceDao">
     <!--select标签用于指定查询方法，
                                其中id属性代表方法名 ，
              parameterType代表方法参数指定类型，
              resultType代表方法返回集合中元素的类型
     -->
-    <select id="findroleSource"  parameterType="int" resultType="com.hzit.entity.RoleSource">
-        select * from RolereSource where rid = #{rid}
+    <select id="findroleSource"  parameterType="int" resultType="com.hzit.entity.RolereSource">
+        select * from RolereSource where roleid = #{roleid}
     </select>
-    <insert id="addroleSource" parameterType="com.hzit.entity.RoleSource">
-        insert into RolereSource values(#{rid},#{resourceid})
+    <insert id="addroleSource" parameterType="com.hzit.entity.RolereSource">
+        insert into RolereSource values(#{roleid},#{resourceid})
     </insert>
-    <update id="updateroleSource" parameterType="com.hzit.entity.RoleSource">
-        update RolereSource set  resourceid = #{resourceid} where rid= #{rid}
+    <update id="updateroleSource" parameterType="com.hzit.entity.RolereSource">
+        update RolereSource set  resourceid = #{resourceid} where roleid= #{roleid}
     </update>
     <delete id="deleteroleSource" parameterType="int">
-        delete from RolereSource where rid = #{rid}
+        delete from RolereSource where roleid = #{roleid}
     </delete>
 </mapper>
