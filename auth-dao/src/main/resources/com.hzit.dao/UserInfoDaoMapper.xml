@@ -7,13 +7,11 @@
              parameterType代表方法参数指定类型，
              resultType代表方法返回集合中元素的类型
     -->
+
     <select id="findUser"  resultType="UserInfo">
         select * from userinfo
     </select>
-    <select id="findRes" resultType="com.hzit.entity.Resources">
-        SELECT * FROM resourcces WHERE rid IN(SELECT resourceid FROM roleresource WHERE roleid IN (SELECT rid FROM urinfo WHERE uid =1 ))
-    </select>
-    <select id="findUserOne" parameterType="UserInfo" resultType="UserInfo">
+    <select id="UserLogin" parameterType="UserInfo" resultType="UserInfo">
         select * from userinfo where uname=#{name} and upass=#{upass}
     </select>
     <insert id="addUser" parameterType="UserInfo">
