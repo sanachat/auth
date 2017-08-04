@@ -24,7 +24,7 @@ import java.util.List;
            // Logger log = Logger.getLogger(Test.class);
             SqlSession session = SqlSessionHelper.getSqlSession();
             ResourcesDao dao = session.getMapper(ResourcesDao.class);
-            List<Resources> list = (List<Resources>) dao.findByRid(1);
+            List<Resources> list =dao.findAll();
             for (Resources r : list) {
                 System.out.println(r);
             }
