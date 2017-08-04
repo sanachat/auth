@@ -12,9 +12,9 @@ public interface UserInfoDao
 {
     public List<UserInfo> findUser();
 
-    public UserInfo findUerOne(UserInfo userInfo);
-
     public List<Resources> findRes(int uid);
+
+    public UserInfo findUerOne(UserInfo userInfo);
 
     public int addUser(UserInfo userInfo);
 
