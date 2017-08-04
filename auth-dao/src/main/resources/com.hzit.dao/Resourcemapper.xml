@@ -17,6 +17,7 @@
         select *from resourcces
     </select>
 
+
     <insert id="insertResources" parameterType="com.hzit.entity.Resources">
         insert into resourcces values(#{rname},#{resurl},#{resorderno},#{redsdes},#{createTime},#{createMan})
     </insert>
