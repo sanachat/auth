@@ -21,4 +21,6 @@ public interface ResourcesDao {
 
     public int deleteResources(int rid);
 
+    public List<Resources> findFirst();
+
 }
