@@ -17,8 +17,9 @@ import java.util.List;
  */
 @WebServlet(name = "ResouceServlet", value="/resource")
 public class ResouceServlet extends HttpServlet {
-    ResourcesDao dao= SqlSessionHelper.getSqlSession().getMapper(ResourcesDao.class);
+    ResourcesDao dao;
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        dao=SqlSessionHelper.getSqlSession().getMapper(ResourcesDao.class);
         List<Resources> allresource=dao.findAll();
         request.setAttribute("allresource",allresource);
         request.getRequestDispatcher("resource.jsp").forward(request,response);
