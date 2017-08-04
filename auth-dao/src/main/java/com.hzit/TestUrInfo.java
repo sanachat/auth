@@ -4,6 +4,7 @@ import com.hzit.dao.UrInfoDao;
 import com.hzit.dao.SqlSessionHelper;
 import com.hzit.entity.UrInfo;
 import org.apache.ibatis.session.SqlSession;
+import org.apache.log4j.Logger;
 
 /**
  * 　　  　  　           \\\|///
@@ -20,11 +21,11 @@ public class TestUrInfo {
     public static void main(String[] args) {
         SqlSession session= SqlSessionHelper.getSqlSession();
         UrInfoDao dao=session.getMapper(UrInfoDao.class);
-
+        Logger log=Logger.getLogger("TestUrInfo");
        /* UrInfo u=new UrInfo();
         u=dao.findUrinfo(1);
-        System.out.println("查询结果为：");
-        System.out.println(u);
+        log.debug("查询结果为：");
+        log.debug(u);
         session.close();//通过用户id查询角色id*/
 
         /*UrInfo u=new UrInfo();
@@ -33,8 +34,8 @@ public class TestUrInfo {
         int num=0;
         num =dao.addUrInfo(u);
         session.commit();
-        System.out.println("添加成功，受影响的行数：" + num);
-        System.out.println(u);
+        log.debug("添加成功，受影响的行数：" + num);
+        log.debug(u);
         session.close();
         //添加用户id及角色id*/
 
@@ -43,15 +44,15 @@ public class TestUrInfo {
 		u.setRid(2);
 		int num = 0;
 		num = dao.updateUrInfo(u);
-		System.out.println("修改成功，受影响的行数：" + num);
+		log.debug("修改成功，受影响的行数：" + num);
 		session.commit();
-		System.out.println(u);
+		log.debug(u);
 		session.close();// 更新角色id或用户id*/
 
 
 		int num = dao.deleteUrInfo(2);
 		session.commit();
-		System.out.println("删除成功，受影响的行数：" + num);
+		log.debug("删除成功，受影响的行数：" + num);
 		session.close();//删除角色
 
     }

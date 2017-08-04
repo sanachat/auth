@@ -4,8 +4,10 @@ import com.hzit.dao.RoleInfoDao;
 import com.hzit.dao.SqlSessionHelper;
 import com.hzit.entity.RoleInfo;
 import org.apache.ibatis.session.SqlSession;
+import org.apache.log4j.Logger;
 
 import java.util.List;
+
 
 /**
  * 　　  　  　           \\\|///
@@ -22,11 +24,11 @@ public class TestRoleinfo {
     public static void main(String[] args) {
         SqlSession session= SqlSessionHelper.getSqlSession();
         RoleInfoDao dao=session.getMapper(RoleInfoDao.class);
-
+        Logger log=Logger.getLogger("TestRoleinfo");
         RoleInfo r=new RoleInfo();
         r=dao.findRole(4);
-        System.out.println("查询结果为：");
-        System.out.println(r);
+        log.debug("查询结果为：");
+        log.debug(r);
         session.close();
 
         /*RoleInfo r=new RoleInfo();
@@ -35,8 +37,8 @@ public class TestRoleinfo {
         int num=0;
         num = dao.addRole(r);
         session.commit();
-        System.out.println("添加成功，受影响的行数：" + num);
-        System.out.println(r);
+        log.debug("添加成功，受影响的行数：" + num);
+        log.debug(r);
         session.close();
         //添加角色id及角色名字*/
 
@@ -45,15 +47,15 @@ public class TestRoleinfo {
 		r.setRname("技术人员");
 		int num = 0;
 		num = dao.updateRole(r);
-		System.out.println("修改成功，受影响的行数：" + num);
+		log.debug("修改成功，受影响的行数：" + num);
 		session.commit();
-		System.out.println(r);
+		log.debug(r);
 		session.close();// 更新角色id或角色名称*/
 
 		/*int num = 0;
 		num = dao.deleteRole(5);
 		session.commit();
-		System.out.println("删除成功，受影响的行数：" + num);
+		log.debug("删除成功，受影响的行数：" + num);
 		session.close();//删除角色*/
 
     }
