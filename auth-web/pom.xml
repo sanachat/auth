@@ -11,5 +11,12 @@
 
     <artifactId>auth-web</artifactId>
 <packaging>war</packaging>
+    <dependencies>
+        <dependency>
+            <groupId>com.hzit.jc</groupId>
+            <artifactId>auth-dao</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
 </project>
