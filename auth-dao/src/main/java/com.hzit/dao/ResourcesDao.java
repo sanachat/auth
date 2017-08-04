@@ -13,6 +13,8 @@ public interface ResourcesDao {
 
     public List<Resources> findAll();
 
+    public List<Resources> findRes(int uid);
+
     public int insertResources(Resources resource);
 
     public int updateResources(Resources resource);

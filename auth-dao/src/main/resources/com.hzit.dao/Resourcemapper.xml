@@ -10,7 +10,9 @@
     <select id="findByRid" parameterType="int" resultType="com.hzit.entity.Resources">
         select *from resourcces where rid=#{rid}
     </select>
-
+    <select id="findRes" resultType="com.hzit.entity.Resources">
+        SELECT * FROM resourcces WHERE rid IN(SELECT resourceid FROM roleresource WHERE roleid IN (SELECT rid FROM urinfo WHERE uid =1 ))
+    </select>
     <select id="findAll"  resultType="com.hzit.entity.Resources">
         select *from resourcces
     </select>
