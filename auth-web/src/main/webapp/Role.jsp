@@ -1,4 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
@@ -29,6 +28,7 @@
   </div>
   <div class="topbar-info">
     <ul class="fr">
+
       <li class="fl topbar-info-item">
         <div class="dropdown">
           <a href="#" class="topbar-btn">
@@ -47,34 +47,75 @@
   <div class="view-sidebar">
     <div class="sidebar-content">
       <!--一级菜单循环从这里开始 ，动态循环显示一级菜单-->
-      <c:forEach var="r" items="relist">
-        <c:if test="${r.parentID=null}">
       <div class="sidebar-nav">
         <div class="sidebar-title">
           <a href="#">
             <span class="icon"><b class="fl icon-arrow-down"></b></span>
-            <span class="text-normal">${r.rname}</span>
+            <span class="text-normal">一级菜单</span>
           </a>
         </div>
         <ul class="sidebar-trans">
           <!--二级菜单循环从这里开始 ，动态循环显示二级菜单-->
-          <c:forEach items="relist" var="rc">
-            <c:if test="${rc.parentID==r.rid}">
           <li>
             <a href="#">
               <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-              <span class="text-normal">${r.name}</span>
+              <span class="text-normal">二级菜单</span>
             </a>
           </li>
-            </c:if>
-          </c:forEach>
           <!--二级菜单循环从这里结束 ，动态循环显示二级菜单-->
+          <li>
+            <a href="#">
+              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
+              <span class="text-normal">二级菜单</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
+              <span class="text-normal">二级菜单</span>
+            </a>
+          </li>
+
+
         </ul>
       </div>
-        </c:if>
-      </c:forEach>
       <!--一级菜单循环从这里结束 ，动态循环显示一级菜单-->
       <!--一级菜单循环从这里开始 ，动态循环显示一级菜单-->
+      <div class="sidebar-nav">
+        <div class="sidebar-title">
+          <a href="#">
+            <span class="icon"><b class="fl icon-arrow-down"></b></span>
+            <span class="text-normal">一级菜单</span>
+          </a>
+        </div>
+        <ul class="sidebar-trans">
+          <!--二级菜单循环从这里开始 ，动态循环显示二级菜单-->
+          <li>
+            <a href="#">
+              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
+              <span class="text-normal">二级菜单</span>
+            </a>
+          </li>
+          <!--二级菜单循环从这里结束 ，动态循环显示二级菜单-->
+          <li>
+            <a href="#">
+              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
+              <span class="text-normal">二级菜单</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
+              <span class="text-normal">二级菜单</span>
+            </a>
+          </li>
+
+
+        </ul>
+      </div>
+      <!--一级菜单循环从这里结束 ，动态循环显示一级菜单-->
+    </div>
+  </div>
   <div class="view-product">
     <div class="authority">
       <div class="authority-head">
@@ -90,10 +131,10 @@
           <div class="offcial-table tr-border margin-big-top clearfix">
             <div class="tr-th clearfix">
               <div class="th w20">
-                管理员
+                角色id
               </div>
               <div class="th w20">
-                所属于角色
+                角色名称
               </div>
               <div class="th w20">
                 状态
