@@ -1,3 +1,5 @@
+package com.hzit.web;
+
 import com.hzit.dao.RoleInfoDao;
 import com.hzit.dao.SqlSessionHelper;
 import com.hzit.entity.RoleInfo;
@@ -23,12 +25,18 @@ public class TestRoleinfo {
         SqlSession session= SqlSessionHelper.getSqlSession();
         RoleInfoDao dao=session.getMapper(RoleInfoDao.class);
         Logger log=Logger.getLogger("TestRoleinfo");
-        RoleInfo r=new RoleInfo();
-        r=dao.findRole(4);
+       /* List<RoleInfo> r=dao.findRolebyuid(1);
         log.debug("查询结果为：");
-        log.debug(r);
+        for (RoleInfo roleInfo : r) {
+            log.debug(roleInfo);
+        }
+        session.close();*/
+        List<RoleInfo> r=dao.findAllRole();
+        log.debug("查询结果为：");
+        for (RoleInfo roleInfo : r) {
+            log.debug(roleInfo);
+        }
         session.close();
-
         /*RoleInfo r=new RoleInfo();
         r.setRid(5);
         r.setRname("测试人员");
