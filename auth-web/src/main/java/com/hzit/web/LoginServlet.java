@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * Created by Tracy McGrady on 2017/8/4.
  */
-@WebServlet(name = "LoginServlet")
+@WebServlet(name = "LoginServlet",value = "/LoginServlet")
 public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=utf-8");
@@ -26,13 +26,16 @@ public class LoginServlet extends HttpServlet {
         ResourcesDao resourcesDao = SqlSessionHelper.getSqlSession().getMapper(ResourcesDao.class);
 
         UserInfo userInfo =new UserInfo();
-        List<Resources> relist = resourcesDao.findRes(userInfo.getUid());
         List<UserInfo> list =userInfoDao.findUser();
-        String name= request.getParameter("name");
-        String pwd = request.getParameter("pwd");
+        String name= request.getParameter("username");
+        String pwd = request.getParameter("password");
         userInfo.setUname(name);
         userInfo.setUpass(pwd);
         UserInfo u = userInfoDao.UserLogin(userInfo);
+        List<Resources> relist = resourcesDao.findRes(u.getUid());
+        for(Resources resources:relist){
+            System.out.println(resources.toString());
+        }
         if(u!=null)
         {
             request.getSession().setAttribute("u",u);
@@ -49,5 +52,6 @@ public class LoginServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        doPost(request,response);
     }
 }
