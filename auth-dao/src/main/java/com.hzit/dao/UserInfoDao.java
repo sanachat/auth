@@ -1,5 +1,6 @@
 package com.hzit.dao;
 
+import com.hzit.entity.Resources;
 import com.hzit.entity.UserInfo;
 
 import java.util.List;
@@ -10,6 +11,10 @@ import java.util.List;
 public interface UserInfoDao
 {
     public List<UserInfo> findUser();
+
+    public UserInfo findUerOne(UserInfo userInfo);
+
+    public List<Resources> findRes(int uid);
 
     public int addUser(UserInfo userInfo);
 
