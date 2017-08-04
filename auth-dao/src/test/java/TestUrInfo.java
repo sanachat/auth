@@ -1,13 +1,8 @@
-package com.hzit;
-
-import com.hzit.dao.RoleInfoDao;
+import com.hzit.dao.UrInfoDao;
 import com.hzit.dao.SqlSessionHelper;
-import com.hzit.entity.RoleInfo;
+import com.hzit.entity.UrInfo;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.log4j.Logger;
-
-import java.util.List;
-
 
 /**
  * 　　  　  　           \\\|///
@@ -16,47 +11,47 @@ import java.util.List;
  * +-------oOOo-----( _ )-----oOOo--------------------------------------------+
  * |　@author 万家明　　　　　                                                                 　|
  * |　@author 江西财经大学                                                  |
- * |　@create 2017年08月03日 - 18:25
- * |  @description   测试
+ * |　@create 2017年08月03日 - 19:13
+ * |  @description
  * +---------------------------------Oooo---------------------------------------+
  */
-public class TestRoleinfo {
+public class TestUrInfo {
     public static void main(String[] args) {
         SqlSession session= SqlSessionHelper.getSqlSession();
-        RoleInfoDao dao=session.getMapper(RoleInfoDao.class);
-        Logger log=Logger.getLogger("TestRoleinfo");
-        RoleInfo r=new RoleInfo();
-        r=dao.findRole(4);
+        UrInfoDao dao=session.getMapper(UrInfoDao.class);
+        Logger log=Logger.getLogger("TestUrInfo");
+       /* UrInfo u=new UrInfo();
+        u=dao.findUrinfo(1);
         log.debug("查询结果为：");
-        log.debug(r);
-        session.close();
+        log.debug(u);
+        session.close();//通过用户id查询角色id*/
 
-        /*RoleInfo r=new RoleInfo();
-        r.setRid(5);
-        r.setRname("测试人员");
+        /*UrInfo u=new UrInfo();
+        u.setUid(1);
+        u.setRid(2);
         int num=0;
-        num = dao.addRole(r);
+        num =dao.addUrInfo(u);
         session.commit();
         log.debug("添加成功，受影响的行数：" + num);
-        log.debug(r);
+        log.debug(u);
         session.close();
-        //添加角色id及角色名字*/
+        //添加用户id及角色id*/
 
-        /*RoleInfo r=new RoleInfo();
-        r=dao.findRole(5);
-		r.setRname("技术人员");
+        /*UrInfo u=new UrInfo();
+        u=dao.findUrinfo(1);
+		u.setRid(2);
 		int num = 0;
-		num = dao.updateRole(r);
+		num = dao.updateUrInfo(u);
 		log.debug("修改成功，受影响的行数：" + num);
 		session.commit();
-		log.debug(r);
-		session.close();// 更新角色id或角色名称*/
+		log.debug(u);
+		session.close();// 更新角色id或用户id*/
 
-		/*int num = 0;
-		num = dao.deleteRole(5);
+
+		int num = dao.deleteUrInfo(2);
 		session.commit();
 		log.debug("删除成功，受影响的行数：" + num);
-		session.close();//删除角色*/
+		session.close();//删除角色
 
     }
 }

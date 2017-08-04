@@ -11,6 +11,10 @@
         select *from resourcces where rid=#{rid}
     </select>
 
+    <select id="findAll"  resultType="com.hzit.entity.Resources">
+        select *from resourcces
+    </select>
+
     <insert id="insertResources" parameterType="com.hzit.entity.Resources">
         insert into resourcces values(#{rname},#{resurl},#{resorderno},#{redsdes},#{createTime},#{createMan})
     </insert>

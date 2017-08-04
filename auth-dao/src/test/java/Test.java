@@ -1,7 +1,6 @@
-
+import com.hzit.dao.ResourcesDao;
 import com.hzit.dao.SqlSessionHelper;
-import com.hzit.dao.UserInfoDao;
-import com.hzit.entity.UserInfo;
+import com.hzit.entity.Resources;
 import org.apache.ibatis.session.SqlSession;
 
 
@@ -24,10 +23,10 @@ import java.util.List;
         public static void main(String[] args) throws IOException {
            // Logger log = Logger.getLogger(Test.class);
             SqlSession session = SqlSessionHelper.getSqlSession();
-            UserInfoDao dao =  session.getMapper(UserInfoDao.class);
-            List<UserInfo> list = dao.findUser();
-            for (UserInfo userInfo: list)
-                System.out.println(userInfo);
+            ResourcesDao dao = session.getMapper(ResourcesDao.class);
+            List<Resources> list =dao.findAll();
+            for (Resources r : list) {
+                System.out.println(r);
             }
         }
-
+    }
