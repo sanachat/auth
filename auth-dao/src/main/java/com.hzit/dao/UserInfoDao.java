@@ -10,11 +10,9 @@ import java.util.List;
  */
 public interface UserInfoDao
 {
+    public UserInfo UserLogin(UserInfo userInfo);
+
     public List<UserInfo> findUser();
-
-    public List<Resources> findRes(int uid);
-
-    public UserInfo findUerOne(UserInfo userInfo);
 
     public int addUser(UserInfo userInfo);
 
