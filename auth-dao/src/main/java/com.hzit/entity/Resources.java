@@ -104,4 +104,20 @@ public class Resources {
     public void setParentId(int parentId) {
         this.parentId = parentId;
     }
+
+    @Override
+    public String toString() {
+        return "Resources{" +
+                "rid=" + rid +
+                ", rname='" + rname + '\'' +
+                ", resurl='" + resurl + '\'' +
+                ", resorderno=" + resorderno +
+                ", redsdes='" + redsdes + '\'' +
+                ", createTime=" + createTime +
+                ", updatetime=" + updatetime +
+                ", createMan='" + createMan + '\'' +
+                ", updateMan='" + updateMan + '\'' +
+                ", parentId=" + parentId +
+                '}';
+    }
 }
