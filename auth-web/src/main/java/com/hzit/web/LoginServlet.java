@@ -24,6 +24,7 @@ public class LoginServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         UserInfoDao userInfoDao = SqlSessionHelper.getSqlSession().getMapper(UserInfoDao.class);
         ResourcesDao resourcesDao = SqlSessionHelper.getSqlSession().getMapper(ResourcesDao.class);
+
         UserInfo userInfo =new UserInfo();
         List<Resources> relist = resourcesDao.findRes(userInfo.getUid());
         List<UserInfo> list =userInfoDao.findUser();
