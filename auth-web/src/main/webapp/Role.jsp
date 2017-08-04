@@ -45,27 +45,33 @@
   <div class="view-sidebar">
     <div class="sidebar-content">
       <!--一级菜单循环从这里开始 ，动态循环显示一级菜单-->
+      <c:forEach var="r" items="${relist}">
+        <c:if test="${r.parentId==0}">
           <div class="sidebar-nav">
             <div class="sidebar-title">
               <a href="#">
                 <span class="icon"><b class="fl icon-arrow-down"></b></span>
-                <span class="text-normal"></span>
+                <span class="text-normal">${r.rname}</span>
               </a>
             </div>
             <ul class="sidebar-trans">
-              <!--二级菜单循环从这里开始 ，动态循环显示二级菜单-->
+              <c:forEach var="ro" items="${relist}">
+                <c:if test="${ro.parentId==r.rid}">
+                  <!--二级菜单循环从这里开始 ，动态循环显示二级菜单-->
                   <li>
                     <a href="#">
-                      <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16"/></b>
-                      <span class="text-normal"></span>
+                      <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
+                      <span class="text-normal">${ro.rname}</span>
                     </a>
                   </li>
-
+                </c:if>
+              </c:forEach>
               <!--二级菜单循环从这里结束 ，动态循环显示二级菜单-->
             </ul>
           </div>
+        </c:if>
+      </c:forEach>
 
-        <!--一级菜单循环从这里结束 ，动态循环显示一级菜单-->
     </div>
   </div>
 </div>
@@ -82,10 +88,10 @@
         <div class="offcial-table tr-border margin-big-top clearfix">
           <div class="tr-th clearfix">
             <div class="th w20">
-              角色名称
+              角色id
             </div>
             <div class="th w20">
-              角色id
+              角色名称
             </div>
             <div class="th w20">
               信息1
@@ -97,19 +103,19 @@
               信息3
             </div>
           </div>
-          <c:forEach var="r" items="${role}">
+          <c:forEach var="role" items="${role}">
             <div class="tr clearfix border-bottom-none">
               <div class="td w20">
-                  ${r.rid}
+                  ${role.rid}
               </div>
               <div class="td w20">
-                  ${r.rname}
+                  ${role.rname}
               </div>
               <div class="td w20">
-
+                  暂无
               </div>
               <div class="td w20">
-
+                暂无
               </div>
 
               <div class="td w20">

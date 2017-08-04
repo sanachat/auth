@@ -4,6 +4,7 @@ import com.hzit.dao.RoleInfoDao;
 import com.hzit.dao.SqlSessionHelper;
 import com.hzit.entity.RoleInfo;
 import com.hzit.entity.UserInfo;
+import org.apache.ibatis.session.SqlSession;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,22 +17,22 @@ import java.util.List;
 /**
  * Created by wan on 2017/8/4.
  */
-@WebServlet(name = "GetRolebyUidServlet",value = "/allrole")
-public class GetRolebyUidServlet extends HttpServlet {
+@WebServlet(name = "AddRoleServlet",value = "/addrole")
+public class AddRoleServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         RoleInfoDao roleInfoDao= SqlSessionHelper.getSqlSession().getMapper(RoleInfoDao.class);
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
+        RoleInfo r=new RoleInfo();
+        String rname =request.getParameter("rname");
+        int rid=Integer.getInteger(request.getParameter("rid"));
+        r.setRid(rid);
+        r.setRname(rname);
+        roleInfoDao.addRole(r);
 
-        UserInfo userInfo=(UserInfo)request.getSession().getAttribute("user");
-        if(userInfo !=null){
-            //获取当前登录用户所拥有的资源
-            List<RoleInfo> rolelist= roleInfoDao.findRolebyuid(userInfo.getUid());
-            request.setAttribute("rolelist",rolelist);
-            request.getRequestDispatcher("index.jsp").forward(request,response);
-        }else{
-            response.sendRedirect("index.jsp");
-        }
+        request.getRequestDispatcher("addRole.jsp").forward(request,response);
+
 
     }
 
