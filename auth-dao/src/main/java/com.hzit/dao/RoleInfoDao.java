@@ -10,6 +10,8 @@ import java.util.List;
 public interface RoleInfoDao {
     public List<RoleInfo> findRole(int rid);
 
+    public List<RoleInfo> findAllRole();
+
     public List<RoleInfo> findRolebyuid(int uid);
 
     public int addRole(RoleInfo roleInfo);
