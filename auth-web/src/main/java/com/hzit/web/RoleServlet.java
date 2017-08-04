@@ -15,18 +15,16 @@ import java.util.List;
 /**
  * Created by wan on 2017/8/4.
  */
-@WebServlet(name = "RoleServlet",value="/Role")
+@WebServlet(name="RoleServlet",value = "/list")
 public class RoleServlet extends HttpServlet {
 
-
+        RoleInfoDao dao;
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RoleInfoDao roleInfoDao= SqlSessionHelper.getSqlSession().getMapper(RoleInfoDao.class);
-        request.setCharacterEncoding("UTF-8");
-        response.setCharacterEncoding("UTF-8");
-        List<RoleInfo> allrole=roleInfoDao.findAllRole();
-        request.setAttribute("allrole",allrole);
+        dao= SqlSessionHelper.getSqlSession().getMapper(RoleInfoDao.class);
+        List<RoleInfo> r=dao.findAllRole();
+        request.getSession().setAttribute("role", r);
+        System.out.println("1");
         request.getRequestDispatcher("Role.jsp").forward(request,response);
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
