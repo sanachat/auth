@@ -55,6 +55,33 @@
 				<div class="sidebar-content">
 
 					<!--这里请使用Foreach标签和if标签循环加载用户的模块列表-->
+
+					<c:forEach var="r" items="${relist}">
+						<c:if test="${r.parentId==0}">
+							<div class="sidebar-nav">
+								<div class="sidebar-title">
+									<a href="#">
+										<span class="icon"><b class="fl icon-arrow-down"></b></span>
+										<span class="text-normal">${r.rname}</span>
+									</a>
+								</div>
+								<ul class="sidebar-trans">
+									<c:forEach var="ro" items="${relist}">
+										<c:if test="${ro.parentId==r.rid}">
+
+											<li>
+												<a href="#">
+													<b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
+													<span class="text-normal">${ro.rname}</span>
+												</a>
+											</li>
+										</c:if>
+									</c:forEach>
+
+								</ul>
+							</div>
+						</c:if>
+					</c:forEach>
 					<!--这里请使用Foreach标签和if标签循环加载用户的模块列表-->
 
 
