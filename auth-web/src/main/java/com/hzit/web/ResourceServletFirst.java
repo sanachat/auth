@@ -15,19 +15,18 @@ import java.util.List;
 /**
  * Created by Administrator on 2017/8/4.
  */
-@WebServlet(name = "ResouceServlet", value="/resource")
-public class ResouceServlet extends HttpServlet {
+@WebServlet(name = "ResourceServletFirst",value = "/toAddResource")
+public class ResourceServletFirst extends HttpServlet {
     ResourcesDao dao;
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        dao=SqlSessionHelper.getSqlSession().getMapper(ResourcesDao.class);
-        List<Resources> allresource=dao.findAll();
-        request.setAttribute("allresource",allresource);
-        request.getRequestDispatcher("resource.jsp").forward(request,response);
+        dao= SqlSessionHelper.getSqlSession().getMapper(ResourcesDao.class);
+        List<Resources> l=  dao.findFirst();
+        request.getSession().setAttribute("FirstResource",l);
+        response.sendRedirect("addResources.jsp");
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request,response);
-
     }
 }
