@@ -1,5 +1,3 @@
-package com.hzit;
-
 import com.hzit.dao.RolereSourceDao;
 import com.hzit.dao.SqlSessionHelper;
 import com.hzit.entity.RolereSource;
