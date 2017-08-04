@@ -13,7 +13,7 @@
     <select id="findUserOne" parameterType="UserInfo" resultType="UserInfo">
         select * from userinfo where uname=#{name} and upass=#{upass}
     </select>
-    <select id="findRes"  resultType="com.hzit.entity.Resources">
+    <select id="findRes" resultType="com.hzit.entity.Resources">
         SELECT * FROM resourcces WHERE rid IN(SELECT resourceid FROM roleresource WHERE roleid IN (SELECT rid FROM urinfo WHERE uid =1 ))
     </select>
     <insert id="addUser" parameterType="UserInfo">
