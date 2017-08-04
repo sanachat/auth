@@ -12,7 +12,7 @@
         select * from userinfo
     </select>
     <select id="UserLogin" parameterType="UserInfo" resultType="UserInfo">
-        select * from userinfo where uname=#{name} and upass=#{upass}
+        select * from userinfo where uname=#{uname} and upass=#{upass}
     </select>
     <insert id="addUser" parameterType="UserInfo">
         insert into userinfo values(#{uid},#{uname},#{upass},#{ustatus})

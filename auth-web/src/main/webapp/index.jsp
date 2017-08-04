@@ -47,8 +47,8 @@
   <div class="view-sidebar">
     <div class="sidebar-content">
       <!--一级菜单循环从这里开始 ，动态循环显示一级菜单-->
-      <c:forEach var="r" items="relist">
-        <c:if test="${r.parentID=null}">
+      <c:forEach var="r" items="${relist}">
+        <c:if test="${r.parentId=null}">
       <div class="sidebar-nav">
         <div class="sidebar-title">
           <a href="#">
@@ -58,12 +58,12 @@
         </div>
         <ul class="sidebar-trans">
           <!--二级菜单循环从这里开始 ，动态循环显示二级菜单-->
-          <c:forEach items="relist" var="rc">
-            <c:if test="${rc.parentID==r.rid}">
+          <c:forEach items="${relist}" var="rc">
+            <c:if test="${rc.parentId==r.rid}">
           <li>
-            <a href="#">
+            <a href="${rc.resurl}">
               <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
-              <span class="text-normal">${r.name}</span>
+              <span class="text-normal">${rc.name}</span>
             </a>
           </li>
             </c:if>
