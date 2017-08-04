@@ -19,4 +19,7 @@
     <delete id="deleteRole" parameterType="int">
         delete from roleinfo where rid = #{rid}
     </delete>
+    <select id="findRolebyuid"  parameterType="int" resultType="com.hzit.entity.RoleInfo">
+       select *from roleinfo where rid in (select rid from UrInfo where uid = #{uid})
+    </select>
 </mapper>
