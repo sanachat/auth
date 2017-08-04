@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * Created by wan on 2017/8/4.
  */
-@WebServlet(name = "GetRolebyUidServlet")
+@WebServlet(name = "GetRolebyUidServlet",value = "/allrole")
 public class GetRolebyUidServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RoleInfoDao roleInfoDao= SqlSessionHelper.getSqlSession().getMapper(RoleInfoDao.class);
