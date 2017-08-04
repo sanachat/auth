@@ -145,7 +145,7 @@
     </div>
   </div>
 </div>
-
+  </div>
 <script>
   $(".sidebar-title").live('click', function() {
     if ($(this).parent(".sidebar-nav").hasClass("sidebar-nav-fold")) {
@@ -157,6 +157,7 @@
     }
   });
 </script>
-</body>
+
+</div></body>
 
 </html>

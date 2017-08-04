@@ -48,7 +48,7 @@
   <div class="view-sidebar">
     <div class="sidebar-content">
       <!--一级菜单循环从这里开始 ，动态循环显示一级菜单-->
-      <c:forEach var="r" items="${allresource}">
+      <c:forEach var="r" items="${relist}">
       <c:if test="${r.parentId==0}">
       <div class="sidebar-nav">
         <div class="sidebar-title">
@@ -58,7 +58,7 @@
           </a>
         </div>
         <ul class="sidebar-trans">
-          <c:forEach var="ro" items="${allresource}">
+          <c:forEach var="ro" items="${relist}">
           <c:if test="${ro.parentId==r.rid}">
           <!--二级菜单循环从这里开始 ，动态循环显示二级菜单-->
           <li>
