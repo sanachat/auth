@@ -20,6 +20,7 @@ public class ResourceServletAdd extends HttpServlet {
     ResourcesDao dao;
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("处理模块的新增功能");
+        dao=SqlSessionHelper.getSqlSession().getMapper(ResourcesDao.class);
         request.setCharacterEncoding("UTF-8");
         String rname = request.getParameter("rname");
         String reurl = request.getParameter("reurl");
@@ -33,7 +34,7 @@ public class ResourceServletAdd extends HttpServlet {
         r.setRedsdes(resource);
         r.setRedsdes(resc);
         r.setResurl(reurl);
-        dao=SqlSessionHelper.getSqlSession().getMapper(ResourcesDao.class);
+
         int num =dao.insertResources(r);
         SqlSessionHelper.getSqlSession().commit();
         if(num==1){
