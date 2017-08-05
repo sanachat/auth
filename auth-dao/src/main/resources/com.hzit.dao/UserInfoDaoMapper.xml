@@ -23,4 +23,8 @@
     <delete id="deleteUser" parameterType="String">
         delete from userinfo where uid = #{uid}
     </delete>
+    <select id="UserInfoMap" parameterType="java.lang.Integer" resultType="UserInfo">
+        select * from userinfo A left JOIN wechat B on A.wechatId=B.wechatId where uid=#{uid}
+    </select>
+
 </mapper>

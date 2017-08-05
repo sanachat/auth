@@ -18,6 +18,8 @@ package com.hzit.entity;
         private String uname;
         private String upass;
         private String ustatus;
+        private String wechatId;
+        private WeChat weChat;
 
         public int getUid() {
             return uid;
@@ -43,9 +45,23 @@ package com.hzit.entity;
         public void setUstatus(String ustatus) {
             this.ustatus = ustatus;
         }
-        @Override
-        public String toString() {
-            return "UserInfo [uid=" + uid + ", uname=" + uname + ", upass=" + upass + ", ustatus=" + ustatus + "]";
+
+        public WeChat getWeChat() {
+            return weChat;
         }
 
-}
+        public void setWeChat(WeChat weChat) {
+            this.weChat = weChat;
+        }
+
+        @Override
+        public String toString() {
+            return "UserInfo{" +
+                    "uid=" + uid +
+                    ", uname='" + uname + '\'' +
+                    ", upass='" + upass + '\'' +
+                    ", ustatus='" + ustatus + '\'' +
+                    ", weChat=" + weChat +
+                    '}';
+        }
+    }
