@@ -16,6 +16,9 @@
     <select id="findAll"  resultType="com.hzit.entity.Resources">
         select *from resourcces
     </select>
+    <select id="findFirst" resultType="com.hzit.entity.Resources">
+        SELECT *FROM resourcces WHERE parentID IS NULL
+    </select>
 
 
     <insert id="insertResources" parameterType="com.hzit.entity.Resources">
