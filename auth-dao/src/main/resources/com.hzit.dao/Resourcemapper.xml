@@ -22,7 +22,7 @@
 
 
     <insert id="insertResources" parameterType="com.hzit.entity.Resources">
-        insert into resourcces values(#{rname},#{resurl},#{resorderno},#{redsdes},#{createTime},#{createMan})
+        insert into resourcces(rname,resurl,resorderno,redsdes,createTime,createMan) values(#{rname},#{resurl},#{resorderno},#{redsdes},#{createTime},#{createMan})
     </insert>
     <update id="updateResources" parameterType="com.hzit.entity.Resources">
         update resourcces set rname=#{rname},resurl=#{resurl},resorderno=#{resorderno},redsdes=#{redsdes},updatetime=#{updatetime},updateMan=#{updateMan} where cardid=#{cardid}
