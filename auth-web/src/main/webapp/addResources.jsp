@@ -92,7 +92,7 @@
 					<div class="manage-head">
 						<h6 class="padding-left manage-head-con">新增模块</h6>
 					</div>
-					<form name="setp0" action="ResourceServletAdd" method="post" autocomplete="off">
+					<form name="setp0" action="/addResource" method="post" autocomplete="off">
 						<div class="basic-info-detail clearfix">
 
 							<div class="unit-style padding-big-lr clearfix">
