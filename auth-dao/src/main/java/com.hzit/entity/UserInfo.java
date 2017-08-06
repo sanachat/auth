@@ -21,6 +21,10 @@ package com.hzit.entity;
         private String wechatId;
         private WeChat weChat;
 
+        /*public UserInfo(String wechatId) {
+            this.wechatId = wechatId;
+        }*/
+
         public int getUid() {
             return uid;
         }
