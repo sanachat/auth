@@ -157,6 +157,7 @@
   });
 </script>
 
-</div></body>
+</div>
+</body>
 
 </html>
