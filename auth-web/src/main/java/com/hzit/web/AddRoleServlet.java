@@ -24,12 +24,19 @@ public class AddRoleServlet extends HttpServlet {
         RoleInfoDao roleInfoDao= SqlSessionHelper.getSqlSession().getMapper(RoleInfoDao.class);
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
-        RoleInfo r=new RoleInfo();
         String rname =request.getParameter("rname");
-        int rid=Integer.getInteger(request.getParameter("rid"));
-        r.setRid(rid);
+
+        RoleInfo r=new RoleInfo();
+
         r.setRname(rname);
-        roleInfoDao.addRole(r);
+        int num=roleInfoDao.addRole(r);
+        SqlSessionHelper.getSqlSession().commit();
+        if(num==1){
+            request.getRequestDispatcher("/list").forward(request,response);
+        }else{
+            response.getWriter().append("添加失败!");
+
+        }
 
         request.getRequestDispatcher("addRole.jsp").forward(request,response);
 
