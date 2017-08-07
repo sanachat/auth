@@ -62,6 +62,32 @@
     <div class="sidebar-content">
 
       <!--这里请使用Foreach标签和if标签循环加载用户的模块列表-->
+      <c:forEach var="r" items="${relist}">
+        <c:if test="${r.parentId==0}">
+          <div class="sidebar-nav">
+            <div class="sidebar-title">
+              <a href="#">
+                <span class="icon"><b class="fl icon-arrow-down"></b></span>
+                <span class="text-normal">${r.rname}</span>
+              </a>
+            </div>
+            <ul class="sidebar-trans">
+              <c:forEach var="ro" items="${relist}">
+                <c:if test="${ro.parentId==r.rid}">
+                  <!--二级菜单循环从这里开始 ，动态循环显示二级菜单-->
+                  <li>
+                    <a href="#">
+                      <b class="sidebar-icon"><img src="Images/icon_author.png" width="16" height="16" /></b>
+                      <span class="text-normal">${ro.rname}</span>
+                    </a>
+                  </li>
+                </c:if>
+              </c:forEach>
+              <!--二级菜单循环从这里结束 ，动态循环显示二级菜单-->
+            </ul>
+          </div>
+        </c:if>
+      </c:forEach>
       <!--这里请使用Foreach标签和if标签循环加载用户的模块列表-->
 
 
@@ -72,7 +98,7 @@
       <div class="manage-head">
         <h6 class="padding-left manage-head-con">新增角色</h6>
       </div>
-      <form name="setp0" action="#" method="post" autocomplete="off">
+      <form name="setp0" action="/addrole" method="post" autocomplete="off">
         <div class="basic-info-detail clearfix">
 
           <div class="unit-style padding-big-lr clearfix">
